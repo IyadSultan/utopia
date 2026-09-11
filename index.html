@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Utopia → medical ontology → patient digital twin</title>
+<style>
+  :root{--ink:#1c2430;--muted:#5b6673;--line:#d9dee5;--bg:#ffffff;--soft:#f4f6f9;
+        --blue:#2f6fed;--green:#2a9d6b;--amber:#d98a1e;--red:#c94b4b;--gold:#b8860b}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header{padding:48px 24px 24px;max-width:1040px;margin:0 auto}
+  h1{font-size:34px;line-height:1.15;margin:0 0 8px}
+  .sub{color:var(--muted);font-size:18px;margin:0}
+  nav{max-width:1040px;margin:0 auto;padding:0 24px 8px;display:flex;gap:16px;flex-wrap:wrap}
+  nav a{color:var(--blue);text-decoration:none;font-weight:600}
+  section{max-width:1040px;margin:0 auto;padding:32px 24px;border-top:1px solid var(--line)}
+  h2{font-size:26px;margin:0 0 6px}
+  .lead{color:var(--muted);margin:0 0 22px;font-size:17px}
+  h3{font-size:17px;margin:26px 0 8px}
+  /* flow */
+  .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin:16px 0}
+  .step{flex:1 1 150px;min-width:150px;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .step b{display:block;font-size:15px;margin-bottom:4px}
+  .step small{color:var(--muted);display:block;font-size:13px;line-height:1.4}
+  .arrow{align-self:center;color:var(--muted);font-size:22px;padding:0 2px}
+  .step.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .step.dark small{color:#c9d1dc}
+  /* two clocks */
+  .clocks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+  .clock{border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .clock b{display:block;margin-bottom:6px}
+  .clock code{background:var(--soft);padding:1px 6px;border-radius:4px;font-size:13px}
+  /* checklist */
+  table{width:100%;border-collapse:collapse;margin:10px 0 4px;font-size:15px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+  .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+  .done{background:#e3f4ec;color:var(--green)}
+  .todo{background:#fbeedb;color:var(--amber)}
+  .gap{background:#f9e3e3;color:var(--red)}
+  /* ladder */
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+  .rung{border:2px solid var(--line);border-radius:10px;padding:14px 16px}
+  .rung b{display:block;font-size:16px}
+  .rung small{color:var(--muted);display:block;margin-top:4px}
+  .rung.here{border-color:var(--blue);background:#eef3ff}
+  .rung.here b::after{content:" ← Utopia is here";color:var(--blue);font-weight:600;font-size:13px}
+  .twin{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
+  .col{border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .col b{display:block;margin-bottom:6px}
+  .col ul{margin:0;padding-left:18px}
+  .col li{margin:4px 0}
+  .note{background:var(--soft);border-left:4px solid var(--blue);padding:10px 14px;border-radius:6px;margin:14px 0;font-size:15px}
+  footer{max-width:1040px;margin:0 auto;padding:24px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer a{color:var(--blue)}
+  @media (max-width:720px){.clocks,.ladder,.twin{grid-template-columns:1fr}.arrow{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Utopia, and the road from a knowledge graph to a patient digital twin</h1>
+  <p class="sub">How the system works today, what it takes to make it medical, and what it takes to call it a digital twin.</p>
+</header>
+<nav>
+  <a href="#works">1 · How it works</a>
+  <a href="#medical">2 · Making it medical</a>
+  <a href="#twin">3 · Making a digital twin</a>
+</nav>
+
+<section id="works">
+  <h2>1 · How it works</h2>
+  <p class="lead">One Rust binary, one Postgres. Documents go in; a graph of entities and facts comes out, with every fact carrying two clocks and a pointer to the sentence it came from.</p>
+
+  <div class="flow">
+    <div class="step"><b>Upload</b><small>PDF, DOCX, XLSX, HTML, text; or sync from GitHub, Jira, Notion, RSS, S3</small></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Chunk + embed</b><small>Document is searchable and askable within seconds</small></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Extract</b><small>One LLM call per chunk, with the ontology in the prompt</small></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Resolve</b><small>Is this mention an entity we already have? Merge or keep apart; a person can review</small></div>
+    <div class="arrow">→</div>
+    <div class="step dark"><b>Graph</b><small>Entities + facts, bitemporal, with evidence</small></div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Check + infer</b><small>Contradictions surfaced; derived facts stored separately with proofs</small></div>
+  </div>
+
+  <h3>The ontology is a contract</h3>
+  <p>Extraction can only write types and relations that the ontology already defines. A term the ontology lacks becomes a counted <em>proposal</em>, adopted by evidence or by a person. "No type" and "no relation" are honest states, not fallback classes. The ontology itself is loaded from OWL/RDFS files (schema.org, PROV-O, your own).</p>
+
+  <h3>Two clocks, nothing overwritten</h3>
+  <div class="clocks">
+    <div class="clock"><b>World time</b> When was this true? <code>valid_from</code> / <code>valid_to</code>, with precision from year to second, and an explicit "ended, date unknown". Diagnoses are states, procedures are events, blood group is eternal.</div>
+    <div class="clock"><b>Record time</b> When did we come to believe it? <code>recorded_at</code> / <code>invalidated_at</code>. A correction inserts a new row that supersedes the old one. Every read can be rewound: <em>what was true on date X, as we knew it on date Y</em>.</div>
+  </div>
+
+  <h3>Rules and governance</h3>
+  <p>People write rules over attribute values ("ANC below 500 and temperature above 38.3 → febrile neutropenia"). Conclusions keep their premises as a proof and retire automatically when a premise is superseded. Every human and agent decision goes to an append-only ledger the application database role cannot edit. An agent that adjudicates duplicates reads its own precedents first, and is switched off automatically if two of its merges are reverted in a week.</p>
+</section>
+
+<section id="medical">
+  <h2>2 · What it takes to make it medical</h2>
+  <p class="lead">The temporal core, provenance and governance already fit clinical records. What is missing is the clinical vocabulary and three safety behaviours.</p>
+
+  <table>
+    <tr><th>Requirement</th><th>Today</th><th>Status</th></tr>
+    <tr><td>Explicit data model, enforced at write time</td><td>Ontology as contract, measured violation rate 57% → 4%</td><td><span class="tag done">have</span></td></tr>
+    <tr><td>Point-in-time truth with provenance</td><td>Two clocks, evidence to the sentence, rewindable reads</td><td><span class="tag done">have</span></td></tr>
+    <tr><td>Contradiction surfacing, human in the loop</td><td>Consistency checker, review queue, decision ledger, fuse</td><td><span class="tag done">have</span></td></tr>
+    <tr><td>Criteria as executable rules with proofs</td><td>Attribute rules: typing and computed conclusions, no aggregation by design</td><td><span class="tag done">have</span></td></tr>
+    <tr><td>Clinical information model</td><td>General packs only (schema.org, PROV-O, FOAF, W3C Org, IOF)</td><td><span class="tag todo">FHIR-lite pack, ~40 classes</span></td></tr>
+    <tr><td>Coded terminologies: ICD-10, ICD-11, SNOMED CT, LOINC, RxNorm</td><td>Datatypes are text / number / date / bool</td><td><span class="tag todo">coded datatype + code tables</span></td></tr>
+    <tr><td>ICD-10 ↔ ICD-11 dual coding</td><td>Derivation engine exists</td><td><span class="tag todo">WHO crosswalk as derived facts with proofs</span></td></tr>
+    <tr><td>Assertion status (negated, family history, hypothetical)</td><td>Not modelled; the classic clinical NLP failure</td><td><span class="tag gap">qualifier on every clinical fact</span></td></tr>
+    <tr><td>Patient identity by identifier, never by name similarity</td><td>Name-based resolution with automatic merge tiers</td><td><span class="tag gap">identifier-only rule, merge gate</span></td></tr>
+    <tr><td>PHI at rest</td><td>Cleartext names and identifiers in entity rows</td><td><span class="tag gap">encode MRN, encrypt names at the boundary</span></td></tr>
+    <tr><td>Structured data without an LLM</td><td>API accepts documents</td><td><span class="tag todo">fact-level ingest for registry, labs, chemo</span></td></tr>
+  </table>
+
+  <div class="note"><b>The one design decision that matters:</b> codes are <em>values</em>, not classes. An ICD code lives on a <code>condition.code</code> fact as a FHIR-style <code>{system, code, display, version}</code>, retrieved into the prompt from a code table the pipeline can never add to. Loading 70,000 ICD codes as entity types would let the pipeline propose new diagnoses, which is the one thing a coding system forbids.</div>
+</section>
+
+<section id="twin">
+  <h2>3 · What it takes to make a digital twin</h2>
+  <p class="lead">The word is used loosely. A 2025 scoping review of 149 healthcare "digital twin" papers found that only 12% met the National Academies definition. Be precise about which rung you are on.</p>
+
+  <div class="ladder">
+    <div class="rung"><b>Digital model</b><small>Built once, updated by hand. No automatic data flow.</small></div>
+    <div class="rung here"><b>Digital shadow</b><small>Automatic flow from patient to model. A person acts on it. Records and reasons; does not predict.</small></div>
+    <div class="rung"><b>Digital twin</b><small>Personalised, continuously updated, <em>predicts</em>, and feeds decisions back into care.</small></div>
+  </div>
+
+  <p>With the medical layer in place, one <code>patient</code> entity and everything reachable from it, read at a chosen world time and record time, is the shadow. Move the world clock back and a mastectomy becomes a future event and the febrile-neutropenia conclusion disappears. Move the record clock back and you see what the tumour board could have known. That part exists today.</p>
+
+  <div class="twin">
+    <div class="col"><b>Sources</b>
+      <ul><li>Registry diagnoses (ICD-10), labs, chemo administrations, admissions: ingested as coded facts, no LLM</li>
+          <li>Pathology, radiology, progress notes, tumour-board minutes: extracted</li>
+          <li>Warehouse tables mounted read-only, queried at question time</li></ul></div>
+    <div class="col"><b>The shadow</b>
+      <ul><li>Bitemporal patient subgraph with evidence</li>
+          <li>Rules: febrile neutropenia, AKI stage, protocol eligibility, with proofs</li>
+          <li>Contradictions between pathology and clinic notes made visible</li>
+          <li>Chat and MCP for clinicians and agents; RDF / FHIR export for auditors</li></ul></div>
+    <div class="col"><b>To become a twin</b>
+      <ul><li>A predictive layer (mechanistic or ML) that reads the shadow and forecasts trajectory</li>
+          <li>A feedback path into care, with a clinician in the loop</li>
+          <li>Verification, validation and uncertainty quantification, prospectively</li>
+          <li>Calibration monitoring and recertification as the patient and the data change</li></ul></div>
+  </div>
+
+  <h3>Validation ladder for the paper</h3>
+  <p>Claims escalate: descriptive → predictive → counterfactual → interventional → population. The shadow supports a <em>descriptive</em> claim: it faithfully records what the sources said, when it was true, when we learned it, and who decided what. Test it with extraction accuracy against two clinician annotators, a tumour-board replay "as of" the board date, and rule matches compared with existing SQL worklists. Everything above that rung needs a prospective study the shadow does not yet support.</p>
+</section>
+
+<footer>
+  Code: <a href="https://github.com/IyadSultan/utopia">github.com/IyadSultan/utopia</a> (fork of <a href="https://github.com/deeplethe/utopia">deeplethe/utopia</a>, Apache-2.0). Manual: <a href="https://github.com/IyadSultan/utopia/blob/dev/Iyad_mannual.md">Iyad_mannual.md</a>. Terminology after Kritzinger 2018, ISO/IEC 30173, NASEM 2023; the 12% figure is Tudor et al. 2025, npj Digital Medicine; the validation ladder is Vallée 2026, Frontiers in Digital Health.
+</footer>
+</body>
+</html>
