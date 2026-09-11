@@ -10,7 +10,8 @@ import json, pathlib, re, subprocess, sys
 import pandas as pd
 
 DATA = pathlib.Path.home() / "Library/CloudStorage/OneDrive-KingHusseinCancerCenter/AI/research/synth_cohort_v1/khcc-aidi-synth-100-v1/tables"
-KB = "01a09191-1b2d-75c1-9f5b-82298c122577"   # KB "General" in the local pilot
+import os
+KB = os.environ.get("UTOPIA_PILOT_KB", "01a0921f-de4d-7890-9053-fba8e710f6ee")   # default: KB "Synthetic patients (coded)"
 BASE = "http://127.0.0.1:1516/api/v1"
 
 GENERIC = re.compile(r"\b(?:the|this|our) patient\b", re.IGNORECASE)
