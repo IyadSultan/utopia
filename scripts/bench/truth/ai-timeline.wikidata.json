@@ -1269,7 +1269,7 @@
       "product_model",
       "software_application"
     ],
-    "GPT-4": [
+    "gpt-4.1-mini": [
       "creative_work",
       "mobile_application",
       "product",
@@ -1277,11 +1277,11 @@
       "software_application",
       "web_application"
     ],
-    "GPT-4.5": [
+    "gpt-4.1-mini.5": [
       "creative_work",
       "software_application"
     ],
-    "GPT-4o": [
+    "gpt-4.1-minio": [
       "creative_work",
       "mobile_application",
       "product",

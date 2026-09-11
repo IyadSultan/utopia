@@ -1289,7 +1289,7 @@ mod tests {
         assert_eq!(name_shape("Meta Platforms", "Meta"), Suffix);
         assert_eq!(name_shape("Claude 4 Opus", "Claude"), Version);
         assert_eq!(name_shape("AlphaFold2", "AlphaFold"), Version);
-        assert_eq!(name_shape("GPT-4.5", "GPT-4"), Version);
+        assert_eq!(name_shape("gpt-4.1-mini.5", "gpt-4.1-mini"), Version);
         assert_eq!(name_shape("Lyria 3", "Lyria"), Version);
         assert_eq!(
             name_shape(

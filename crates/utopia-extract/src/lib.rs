@@ -639,7 +639,7 @@ Names:\n\
   after first mention.\n\
 - A name that is the other name with something ADDED AT THE END is a different, more \
   specific thing: a version or edition (\"Claude 4 Opus\" is not \"Claude\", \"AlphaFold2\" is \
-  not \"AlphaFold\", \"Genie 2\" is not \"Genie\", \"GPT-4.5\" is not \"GPT-4\", \"2024 \
+  not \"AlphaFold\", \"Genie 2\" is not \"Genie\", \"gpt-4.1-mini.5\" is not \"gpt-4.1-mini\", \"2024 \
   International Mathematical Olympiad\" is not \"International Mathematical Olympiad\"), a \
   variant or tier (\"Gemini Robotics-ER\" is not \"Gemini Robotics\", \"Claude 3 Haiku\" is \
   not \"Haiku\"), a division, subsidiary or legal entity (\"DeepMind Health\" is not \
@@ -1489,7 +1489,7 @@ mod tests {
         let raw = r#"{
           "entities": [{"name": "OpenAI", "type": "organization"}],
           "facts": [
-            {"subject": "OpenAI", "predicate": "produces", "object": "GPT-4"},
+            {"subject": "OpenAI", "predicate": "produces", "object": "gpt-4.1-mini"},
             {"subject": "OpenAI", "object": "ChatGPT"},
             {"subject": "Sam Altman", "predicate": "leads", "object": "OpenAI"}
           ]

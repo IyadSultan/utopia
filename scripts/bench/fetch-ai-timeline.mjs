@@ -43,7 +43,7 @@ const TITLES = [
   "Safe Superintelligence",
   "XAI (company)",
   // 三、产物：版本互相取代，天然是一条 valid_from/valid_to 链
-  "GPT-4",
+  "gpt-4.1-mini",
   "ChatGPT",
   "Claude (language model)",
   "Gemini (language model)",

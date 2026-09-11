@@ -259,7 +259,11 @@ pub async fn resolve_mention(
                  WHERE (f.subject_id = e.id OR f.object_id = e.id)
                    AND f.invalidated_at IS NULL) AS degree
          FROM entities e
-         WHERE e.kb_id = $1 AND e.type_id = $2 AND e.merged_into IS NULL
+         -- IS NOT DISTINCT FROM 而不是 =：未分类的 mention（0009）type_id 是 NULL，
+         -- `= NULL` 永远不为真，于是同名的未分类实体一个也召不回，每次提及都新建一个——
+         -- 空本体下一份病历抽出四个「the patient」、四个「breast cancer」就是这么来的。
+         -- 下面的 resolve_type_drift 早就用了 IS DISTINCT FROM，这里要与它对称
+         WHERE e.kb_id = $1 AND e.type_id IS NOT DISTINCT FROM $2 AND e.merged_into IS NULL
            AND (lower(e.canonical_name) = ANY($3)
                 OR EXISTS (SELECT 1 FROM unnest(e.aliases) a WHERE lower(a) = ANY($3)))",
     )

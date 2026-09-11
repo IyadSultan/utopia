@@ -3152,7 +3152,7 @@ mod name_tests {
             "OpenAI's board of directors",
             "Safe Superintelligence Inc.",
             "École Polytechnique",
-            "GPT-4",
+            "gpt-4.1-mini",
         ] {
             assert!(is_entity_name(s), "这是真实体，不该被挡：{s}");
         }

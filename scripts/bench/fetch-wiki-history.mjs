@@ -108,7 +108,7 @@ const TITLES = [
   { title: "Satya Nadella" },
 
   // 四、产物：版本互相取代，天然是一条 valid_from/valid_to 链
-  { title: "GPT-4" },
+  { title: "gpt-4.1-mini" },
   { title: "ChatGPT" },
   { title: "Claude (language model)" },
   { title: "Gemini (language model)" },
