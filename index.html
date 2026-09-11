@@ -3,11 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Utopia → medical ontology → patient digital twin</title>
 <style>
   :root{--ink:#1c2430;--muted:#5b6673;--line:#d9dee5;--bg:#ffffff;--soft:#f4f6f9;
         --blue:#2f6fed;--green:#2a9d6b;--amber:#d98a1e;--red:#c94b4b;--gold:#b8860b}
+  html[data-theme="dark"]{--ink:#e6ebf2;--muted:#9aa6b5;--line:#2b3441;--bg:#0f141b;--soft:#182029;
+        --blue:#7aa2ff;--green:#5cc397;--amber:#e8a94a;--red:#e07a7a}
+  html[data-theme="dark"] .step.dark{background:#e6ebf2;color:#0f141b;border-color:#e6ebf2}
+  html[data-theme="dark"] .step.dark small{color:#3d4753}
+  html[data-theme="dark"] .rung.here{background:#1a2740}
+  html[data-theme="dark"] .done{background:#173327}
+  html[data-theme="dark"] .todo{background:#3a2a10}
+  html[data-theme="dark"] .gap{background:#3d1c1c}
   *{box-sizing:border-box}
+  .theme{position:fixed;top:14px;right:16px;z-index:9;border:1px solid var(--line);background:var(--soft);color:var(--ink);
+         border-radius:999px;padding:6px 12px;font:600 13px/1 inherit;cursor:pointer}
+  .theme:hover{border-color:var(--blue)}
   body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
   header{padding:48px 24px 24px;max-width:1040px;margin:0 auto}
   h1{font-size:34px;line-height:1.15;margin:0 0 8px}
@@ -58,6 +70,17 @@
 </style>
 </head>
 <body>
+<script>
+(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<button class="theme" id="theme" type="button" aria-label="Toggle night mode">🌙 Night</button>
+<script>
+(function(){var b=document.getElementById('theme'),h=document.documentElement;
+function paint(){b.textContent=h.getAttribute('data-theme')==='dark'?'☀️ Day':'🌙 Night';}
+b.onclick=function(){var t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);localStorage.setItem('theme',t);paint();};
+paint();})();
+</script>
 
 <header>
   <h1>Utopia, and the road from a knowledge graph to a patient digital twin</h1>
