@@ -58,7 +58,7 @@ def push_per_note(sid: int) -> None:
     pt = pd.read_csv(DATA / "VISTA_PATIENTS.csv"); pt = pt[pt.SYNTH_ID == sid].iloc[0]
     n = pd.read_csv(DATA / "VISTA_NOTES.csv"); n = n[n.SYNTH_ID == sid].copy()
     n["Entry_Date"] = pd.to_datetime(n.Entry_Date); n = n.sort_values("Entry_Date")
-    head = (f"Synthetic patient SYNTH-{sid:03d}, {pt.SEX.lower()}, {pt.age_years} years. "
+    head = (f"Synthetic patient {sid:03d}, {pt.SEX.lower()}, {pt.age_years} years. "
             "Dates are date-shifted; identifiers are synthetic.")
     created = 0
     for _, r in n.iterrows():

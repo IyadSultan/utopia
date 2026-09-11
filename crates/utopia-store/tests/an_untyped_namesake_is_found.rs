@@ -13,16 +13,23 @@ struct Fixture {
 }
 
 async fn seed(pool: &PgPool) -> anyhow::Result<Fixture> {
-    let (org, ws, kb, patient) = (Uuid::now_v7(), Uuid::now_v7(), Uuid::now_v7(), Uuid::now_v7());
+    let (org, ws, kb, patient) = (
+        Uuid::now_v7(),
+        Uuid::now_v7(),
+        Uuid::now_v7(),
+        Uuid::now_v7(),
+    );
     sqlx::query("INSERT INTO organizations (id, name) VALUES ($1, 'untyped-namesake-test')")
         .bind(org)
         .execute(pool)
         .await?;
-    sqlx::query("INSERT INTO workspaces (id, org_id, name) VALUES ($1, $2, 'untyped-namesake-test')")
-        .bind(ws)
-        .bind(org)
-        .execute(pool)
-        .await?;
+    sqlx::query(
+        "INSERT INTO workspaces (id, org_id, name) VALUES ($1, $2, 'untyped-namesake-test')",
+    )
+    .bind(ws)
+    .bind(org)
+    .execute(pool)
+    .await?;
     sqlx::query(
         "INSERT INTO knowledge_bases (id, workspace_id, name) VALUES ($1, $2, 'untyped-namesake-test')",
     )
