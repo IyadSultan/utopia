@@ -142,9 +142,9 @@
       ]
     },
     {
-      "doc": "gpt-4.1-mini.txt",
-      "title": "gpt-4.1-mini",
-      "name": "gpt-4.1-mini",
+      "doc": "gpt-4.txt",
+      "title": "GPT-4",
+      "name": "GPT-4",
       "qid": "Q116709136",
       "p31": [
         "Q115305900",
@@ -404,7 +404,7 @@
         "Q43229"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Alphabet Inc.": {
@@ -813,7 +813,7 @@
         "anthropic.txt",
         "chatgpt.txt",
         "claude-ai.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt",
         "openai.txt",
         "spacexai.txt"
@@ -968,7 +968,7 @@
         "Q2297769"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Axios": {
@@ -991,7 +991,7 @@
         "Q6576792"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Beamrider": {
@@ -1335,7 +1335,7 @@
         "claude-ai.txt",
         "gemini-language-model.txt",
         "google-deepmind.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "inflection-ai.txt",
         "llama-language-model.txt",
         "openai.txt",
@@ -1653,7 +1653,7 @@
         "Q3467906"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Coursera": {
@@ -1704,7 +1704,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt"
       ]
     },
@@ -1885,7 +1885,7 @@
         "Q5"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Donald Trump": {
@@ -1941,7 +1941,7 @@
         "Q620615"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Durk Kingma": {
@@ -2007,7 +2007,7 @@
       "from": [
         "chatgpt.txt",
         "google-deepmind.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt",
         "removal-of-sam-altman-from-openai.txt",
         "spacexai.txt"
@@ -2094,7 +2094,7 @@
         "Q4830453"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Eric Schmidt": {
@@ -2533,7 +2533,7 @@
         "Q31855"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Futurism": {
@@ -2718,7 +2718,7 @@
       ],
       "from": [
         "gemini-language-model.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "GitLab": {
@@ -3109,7 +3109,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "GPT-1": {
@@ -3119,7 +3119,7 @@
         "Q116777014"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "GPT-2": {
@@ -3130,7 +3130,7 @@
         "Q116777014"
       ],
       "from": [
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt"
       ]
     },
@@ -3146,15 +3146,15 @@
       "from": [
         "chatgpt.txt",
         "gemini-language-model.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt",
         "mistral-ai.txt",
         "openai.txt"
       ]
     },
-    "gpt-4.1-mini": {
+    "GPT-4": {
       "qid": "Q116709136",
-      "title": "gpt-4.1-mini",
+      "title": "GPT-4",
       "p31": [
         "Q115305900",
         "Q116777014",
@@ -3164,16 +3164,16 @@
         "chatgpt.txt",
         "gemini-language-model.txt",
         "google-deepmind.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt",
         "mistral-ai.txt",
         "openai.txt",
         "removal-of-sam-altman-from-openai.txt"
       ]
     },
-    "gpt-4.1-mini.5": {
+    "GPT-4.5": {
       "qid": "Q132804879",
-      "title": "gpt-4.1-mini.5",
+      "title": "GPT-4.5",
       "p31": [
         "Q115305900",
         "Q116777014"
@@ -3182,9 +3182,9 @@
         "openai.txt"
       ]
     },
-    "gpt-4.1-minio": {
+    "GPT-4o": {
       "qid": "Q125919502",
-      "title": "gpt-4.1-minio",
+      "title": "GPT-4o",
       "p31": [
         "Q112702082",
         "Q116777014",
@@ -3192,7 +3192,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt"
       ]
     },
@@ -3204,7 +3204,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt"
       ]
     },
@@ -3432,7 +3432,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "hugging-face.txt",
         "llama-language-model.txt",
         "openai.txt",
@@ -3488,7 +3488,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Icelandic language": {
@@ -3996,7 +3996,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Kevin Scott": {
@@ -4016,7 +4016,7 @@
         "Q163740"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "King's Cross Central": {
@@ -4418,7 +4418,7 @@
         "Q17232649"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "MATLAB": {
@@ -4432,7 +4432,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Matthew Butterick": {
@@ -4462,7 +4462,7 @@
         "Q5"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Memphis, Tennessee": {
@@ -4579,7 +4579,7 @@
         "anthropic.txt",
         "chatgpt.txt",
         "gemini-language-model.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt",
         "mistral-ai.txt",
         "openai.txt",
@@ -4633,7 +4633,7 @@
         "Q4182287"
       ],
       "from": [
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt"
       ]
     },
@@ -4648,7 +4648,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Microsoft Edge": {
@@ -4658,7 +4658,7 @@
         "Q6368"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Microsoft Office": {
@@ -4670,7 +4670,7 @@
         "Q7247856"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Microsoft Store": {
@@ -5053,7 +5053,7 @@
       "from": [
         "chatgpt.txt",
         "google-deepmind.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt"
       ]
     },
@@ -5300,7 +5300,7 @@
       "from": [
         "anthropic.txt",
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "hugging-face.txt",
         "inflection-ai.txt",
         "llama-language-model.txt",
@@ -5365,7 +5365,7 @@
         "claude-ai.txt",
         "gemini-language-model.txt",
         "google-deepmind.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "hugging-face.txt",
         "inflection-ai.txt",
         "llama-language-model.txt",
@@ -5474,7 +5474,7 @@
       "from": [
         "gemini-language-model.txt",
         "google-deepmind.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt"
       ]
     },
@@ -5787,7 +5787,7 @@
         "claude-ai.txt",
         "gemini-language-model.txt",
         "google-deepmind.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "hugging-face.txt",
         "inflection-ai.txt",
         "llama-language-model.txt",
@@ -5892,7 +5892,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "llama-language-model.txt",
         "openai.txt"
       ]
@@ -6013,7 +6013,7 @@
         "Q5"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Reddit": {
@@ -6211,7 +6211,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt",
         "removal-of-sam-altman-from-openai.txt",
         "safe-superintelligence-inc.txt"
@@ -6303,7 +6303,7 @@
         "Q5"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Satya Nadella": {
@@ -6411,7 +6411,7 @@
         "Q1153191"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "September 11 attacks": {
@@ -6792,7 +6792,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Steven Levy": {
@@ -6914,7 +6914,7 @@
         "Q189210"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Super Bowl LX": {
@@ -7015,7 +7015,7 @@
         "Q748250"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "TechRadar": {
@@ -7036,7 +7036,7 @@
         "Q5"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Tel Aviv": {
@@ -7242,7 +7242,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt",
         "removal-of-sam-altman-from-openai.txt"
       ]
@@ -7468,7 +7468,7 @@
       "p31": [],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Training, validation, and test data sets": {
@@ -7498,7 +7498,7 @@
         "Q846636"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Trevor Blackwell": {
@@ -7672,7 +7672,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "United States Securities and Exchange Commission": {
@@ -7800,7 +7800,7 @@
         "Q522972"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Vox": {
@@ -7811,7 +7811,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "Vox Media": {
@@ -8061,7 +8061,7 @@
       ],
       "from": [
         "chatgpt.txt",
-        "gpt-4.1-mini.txt",
+        "gpt-4.txt",
         "openai.txt"
       ]
     },
@@ -8074,7 +8074,7 @@
         "Q870780"
       ],
       "from": [
-        "gpt-4.1-mini.txt"
+        "gpt-4.txt"
       ]
     },
     "YouTube": {

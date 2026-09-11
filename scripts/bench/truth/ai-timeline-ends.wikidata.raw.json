@@ -961,9 +961,9 @@
         "mistral-ai.txt"
       ]
     },
-    "gpt-4.1-mini": {
+    "GPT-4": {
       "qid": "Q116709136",
-      "title": "gpt-4.1-mini",
+      "title": "GPT-4",
       "p31": [
         "Q115305900",
         "Q116777014",

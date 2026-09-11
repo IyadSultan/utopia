@@ -817,7 +817,7 @@ const PRESETS: Record<
   },
   OpenAI: {
     chat: "https://api.openai.com/v1",
-    chatModel: "gpt-4.1-minio-mini",
+    chatModel: "gpt-4o-mini",
     embed: "https://api.openai.com/v1",
     embedModel: "text-embedding-3-small",
   },

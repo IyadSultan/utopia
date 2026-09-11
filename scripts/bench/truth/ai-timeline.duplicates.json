@@ -1297,38 +1297,38 @@
       "verdict": "different"
     },
     {
-      "left": "gpt-4.1-mini",
-      "right": "gpt-4.1-mini",
+      "left": "GPT-4",
+      "right": "GPT-4",
       "verdict": "same",
-      "why": "gpt-4.1-mini under two types"
+      "why": "GPT-4 under two types"
     },
     {
-      "left": "gpt-4.1-mini",
-      "right": "gpt-4.1-mini.5",
+      "left": "GPT-4",
+      "right": "GPT-4.5",
       "verdict": "different"
     },
     {
-      "left": "gpt-4.1-mini",
-      "right": "gpt-4.1-mini answered 44% of prompts asking for copyrighted text",
+      "left": "GPT-4",
+      "right": "GPT-4 answered 44% of prompts asking for copyrighted text",
       "verdict": "different"
     },
     {
-      "left": "gpt-4.1-mini",
-      "right": "gpt-4.1-minio",
+      "left": "GPT-4",
+      "right": "GPT-4o",
       "verdict": "different"
     },
     {
-      "left": "gpt-4.1-mini",
-      "right": "gpt-4.1-mini Turbo platform",
+      "left": "GPT-4",
+      "right": "GPT-4 Turbo platform",
       "verdict": "different"
     },
     {
-      "left": "gpt-4.1-mini answered 44% of prompts asking for copyrighted text",
+      "left": "GPT-4 answered 44% of prompts asking for copyrighted text",
       "right": "prompts",
       "verdict": "different"
     },
     {
-      "left": "gpt-4.1-mini answered 44% of prompts asking for copyrighted text",
+      "left": "GPT-4 answered 44% of prompts asking for copyrighted text",
       "right": "prompts asking for copyrighted text",
       "verdict": "different"
     },
